@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Measurement" representedClassName="MCMeasurement" syncable="YES">
+        <attribute name="accuracy" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="bodyPart" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bodySide" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isLocal" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Double" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="w" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="x" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="z" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Peripheral" representedClassName="Peripheral" syncable="YES">
+        <attribute name="bodyPart" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bodySide" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Measurement" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="Peripheral" positionX="0" positionY="54" width="128" height="118"/>
+    </elements>
+</model>
