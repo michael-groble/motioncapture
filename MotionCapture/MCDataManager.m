@@ -102,6 +102,7 @@
 
 - (void)truncateDatabase
 {
+  // TODO use new batch operations instead of this file based approach.  At minimum, fix deprecated lock/unlock
   NSPersistentStore* store = [self.persistentStoreCoordinator persistentStoreForURL:_databaseUrl];
   [self.objectContext performBlockAndWait:^{
     [self.objectContext rollback];

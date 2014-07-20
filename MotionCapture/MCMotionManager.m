@@ -20,15 +20,15 @@
 
 #import <CoreMotion/CoreMotion.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <AVFoundation/AVFoundation.h>
 #import <objc/message.h>
 
 #import "MCMotionManager.h"
 #import "MCMotionStore.h"
-#import "SimpleIOUnit.h"
 #import "MCMotionLocalDevice.h"
 #import "MCMotionBLEPeripheral.h"
 
-@interface MCMotionManager ()<SimpleIODelegate,CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface MCMotionManager ()<CBCentralManagerDelegate, CBPeripheralDelegate>
 {
   NSMutableArray* _peripherals;
   NSMutableArray* _disconnectedPeripherals;
@@ -37,7 +37,7 @@
 @property(nonatomic, strong) MCMotionLocalDevice* localDevice;
 @property(nonatomic, strong) NSMutableDictionary* bleUnknownDevices;
 @property(nonatomic, strong) CBCentralManager* central;
-@property(nonatomic, strong) SimpleIOUnit* unit;
+@property(nonatomic, strong) AVAudioEngine* engine;
 @property(nonatomic, assign, getter = isScanning) BOOL scanning;
 
 -(void)insertObject:(MCMotionPeripheral*)object inPeripheralsAtIndex:(NSUInteger)index;
@@ -63,14 +63,14 @@
   _disconnectedPeripherals = [[NSMutableArray alloc] initWithCapacity:10];
   _bleUnknownDevices = [[NSMutableDictionary alloc] initWithCapacity:10];
   _central = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+  _engine = [[AVAudioEngine alloc] init];
   
-  AudioStreamBasicDescription streamFormat;
-  [SimpleIOUnit defaultInputFormat:&streamFormat];
+  AVAudioInputNode* input = [_engine inputNode];
+  // We don't do anything with the data, we just set up the tap to get the red recording banner on the device so people know it is recording.
+  // TODO fix so we still get banner without messing up audio.
+  // TODO Also consider recording the motion as a metadata track in a real audio recording.
+  [input installTapOnBus:0 bufferSize:8192 format:[input inputFormatForBus:0] block:^(AVAudioPCMBuffer *buffer, AVAudioTime *when){}];
   
-  self.unit = [[SimpleIOUnit alloc] initWithInputFormat:&streamFormat error:nil];
-  NSAssert(_unit, @"Can't init unit");
-  
-  self.unit.inputDelegate = self;
   self.recording = [MCMotionStore sharedInstance].enabled;
   self.scanning = NO;
   
@@ -97,10 +97,13 @@
 - (void) setRecording:(BOOL)recording
 {
   if (YES == recording) {
-    [_unit start:nil];
+    NSError* error;
+    if (NO == [_engine startAndReturnError:&error]) {
+      NSLog(@"Error starting AVAudioEngine: %@", error.localizedDescription);
+    }
   }
   else {
-    [_unit stop:nil];
+    [_engine stop];
   }
   _recording = recording;
   [MCMotionStore sharedInstance].enabled = recording;
