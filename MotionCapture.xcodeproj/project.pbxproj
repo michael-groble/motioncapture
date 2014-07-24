@@ -19,6 +19,8 @@
 		279295A618F05B4300FECF91 /* MCStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279295A518F05B4300FECF91 /* MCStorageViewController.m */; };
 		27A1C77F18E25C31001F33D6 /* MCDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C77E18E25C31001F33D6 /* MCDeviceDetailViewController.m */; };
 		27A1C78218E384FC001F33D6 /* MCMotionLocalDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A1C78118E384FC001F33D6 /* MCMotionLocalDevice.m */; };
+		27A486DB1980809F0015DBF7 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A486DA1980809F0015DBF7 /* utils.swift */; };
+		27A486DE1980913A0015DBF7 /* utilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A486DD1980913A0015DBF7 /* utilsTest.swift */; };
 		27BEE8131724427A00AA5417 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8121724427A00AA5417 /* UIKit.framework */; };
 		27BEE8151724427A00AA5417 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8141724427A00AA5417 /* Foundation.framework */; };
 		27BEE8171724427A00AA5417 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8161724427A00AA5417 /* CoreGraphics.framework */; };
@@ -32,8 +34,6 @@
 		27BEE8381724427B00AA5417 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8121724427A00AA5417 /* UIKit.framework */; };
 		27BEE8391724427B00AA5417 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8141724427A00AA5417 /* Foundation.framework */; };
 		27BEE8411724427B00AA5417 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27BEE83F1724427B00AA5417 /* InfoPlist.strings */; };
-		27BEE8441724427B00AA5417 /* MotionCaptureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE8431724427B00AA5417 /* MotionCaptureTests.m */; };
-		27BEE8551724432D00AA5417 /* MCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE84E1724432D00AA5417 /* MCDataManager.m */; };
 		27BEE8561724432D00AA5417 /* imu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE84F1724432D00AA5417 /* imu.xcdatamodeld */; };
 		27BEE8571724432D00AA5417 /* MCMeasurement.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE8521724432D00AA5417 /* MCMeasurement.m */; };
 		27BEE8581724432D00AA5417 /* MCMotionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE8541724432D00AA5417 /* MCMotionStore.m */; };
@@ -42,6 +42,10 @@
 		27BEE85F1724C54D00AA5417 /* MCMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BEE85E1724C54D00AA5417 /* MCMotionManager.m */; };
 		27BEE8611724D98300AA5417 /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEE8601724D98300AA5417 /* libobjc.A.dylib */; };
 		27D5BDA6197C0D9500F4132B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D5BDA5197C0D9500F4132B /* AVFoundation.framework */; };
+		27D5BDAD197D67F200F4132B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5BDAC197D67F200F4132B /* DataManager.swift */; };
+		27EBE8B9198098D8008CEF86 /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EBE8B8198098D8008CEF86 /* DataManagerTest.swift */; };
+		27EBE8BB19809AE3008CEF86 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A486DA1980809F0015DBF7 /* utils.swift */; };
+		27EBE8BC1980A6FA008CEF86 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D5BDAC197D67F200F4132B /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,20 @@
 			remoteInfo = MotionCapture;
 		};
 		2757A136197ADF6E004BD168 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BEE8071724427A00AA5417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BEE80E1724427A00AA5417;
+			remoteInfo = MotionCapture;
+		};
+		27A486DF198094810015DBF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BEE8071724427A00AA5417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BEE80E1724427A00AA5417;
+			remoteInfo = MotionCapture;
+		};
+		27A486E1198094820015DBF7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27BEE8071724427A00AA5417 /* Project object */;
 			proxyType = 1;
@@ -127,6 +145,8 @@
 		27A1C77E18E25C31001F33D6 /* MCDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDeviceDetailViewController.m; sourceTree = "<group>"; };
 		27A1C78018E384FC001F33D6 /* MCMotionLocalDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMotionLocalDevice.h; sourceTree = "<group>"; };
 		27A1C78118E384FC001F33D6 /* MCMotionLocalDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMotionLocalDevice.m; sourceTree = "<group>"; };
+		27A486DA1980809F0015DBF7 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		27A486DD1980913A0015DBF7 /* utilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilsTest.swift; sourceTree = "<group>"; };
 		27BEE80F1724427A00AA5417 /* MotionCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BEE8121724427A00AA5417 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27BEE8141724427A00AA5417 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,10 +164,6 @@
 		27BEE8351724427B00AA5417 /* MotionCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BEE83E1724427B00AA5417 /* MotionCaptureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionCaptureTests-Info.plist"; sourceTree = "<group>"; };
 		27BEE8401724427B00AA5417 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		27BEE8421724427B00AA5417 /* MotionCaptureTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCaptureTests.h; sourceTree = "<group>"; };
-		27BEE8431724427B00AA5417 /* MotionCaptureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCaptureTests.m; sourceTree = "<group>"; };
-		27BEE84D1724432D00AA5417 /* MCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDataManager.h; sourceTree = "<group>"; };
-		27BEE84E1724432D00AA5417 /* MCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDataManager.m; sourceTree = "<group>"; };
 		27BEE8501724432D00AA5417 /* imu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = imu.xcdatamodel; sourceTree = "<group>"; };
 		27BEE8511724432D00AA5417 /* MCMeasurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMeasurement.h; sourceTree = "<group>"; };
 		27BEE8521724432D00AA5417 /* MCMeasurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMeasurement.m; sourceTree = "<group>"; };
@@ -159,6 +175,9 @@
 		27BEE85E1724C54D00AA5417 /* MCMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMotionManager.m; sourceTree = "<group>"; };
 		27BEE8601724D98300AA5417 /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		27D5BDA5197C0D9500F4132B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27D5BDAB197D67F100F4132B /* MotionCapture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionCapture-Bridging-Header.h"; sourceTree = "<group>"; };
+		27D5BDAC197D67F200F4132B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		27EBE8B8198098D8008CEF86 /* DataManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +245,6 @@
 		27BEE8181724427A00AA5417 /* MotionCapture */ = {
 			isa = PBXGroup;
 			children = (
-				27BEE84D1724432D00AA5417 /* MCDataManager.h */,
-				27BEE84E1724432D00AA5417 /* MCDataManager.m */,
 				27BEE84F1724432D00AA5417 /* imu.xcdatamodeld */,
 				274CDE3818E0BF5E003C2C27 /* MCPeripheral.h */,
 				274CDE3918E0BF5E003C2C27 /* MCPeripheral.m */,
@@ -261,6 +278,9 @@
 				2792959F18EA40E800FECF91 /* MCMagnetometerData.m */,
 				279295A418F05B4300FECF91 /* MCStorageViewController.h */,
 				279295A518F05B4300FECF91 /* MCStorageViewController.m */,
+				27D5BDAC197D67F200F4132B /* DataManager.swift */,
+				27D5BDAB197D67F100F4132B /* MotionCapture-Bridging-Header.h */,
+				27A486DA1980809F0015DBF7 /* utils.swift */,
 			);
 			path = MotionCapture;
 			sourceTree = "<group>";
@@ -282,9 +302,9 @@
 		27BEE83C1724427B00AA5417 /* MotionCaptureTests */ = {
 			isa = PBXGroup;
 			children = (
-				27BEE8421724427B00AA5417 /* MotionCaptureTests.h */,
-				27BEE8431724427B00AA5417 /* MotionCaptureTests.m */,
 				27BEE83D1724427B00AA5417 /* Supporting Files */,
+				27A486DD1980913A0015DBF7 /* utilsTest.swift */,
+				27EBE8B8198098D8008CEF86 /* DataManagerTest.swift */,
 			);
 			path = MotionCaptureTests;
 			sourceTree = "<group>";
@@ -338,6 +358,8 @@
 				2757A137197ADF6E004BD168 /* PBXTargetDependency */,
 				27D5BDA8197C1A5200F4132B /* PBXTargetDependency */,
 				27D5BDAA197C1A5200F4132B /* PBXTargetDependency */,
+				27A486E0198094810015DBF7 /* PBXTargetDependency */,
+				27A486E2198094820015DBF7 /* PBXTargetDependency */,
 			);
 			name = MotionCaptureTests;
 			productName = MotionCaptureTests;
@@ -431,14 +453,15 @@
 				276C602F18E5D7720081D199 /* MCMotionBLEPeripheral.m in Sources */,
 				279295A618F05B4300FECF91 /* MCStorageViewController.m in Sources */,
 				274CDE4018E1E216003C2C27 /* MCDeviceTableViewController.m in Sources */,
-				27BEE8551724432D00AA5417 /* MCDataManager.m in Sources */,
 				27BEE8561724432D00AA5417 /* imu.xcdatamodeld in Sources */,
 				279295A018EA40E800FECF91 /* MCMagnetometerData.m in Sources */,
 				27BEE8571724432D00AA5417 /* MCMeasurement.m in Sources */,
 				27BEE8581724432D00AA5417 /* MCMotionStore.m in Sources */,
 				2741091D18E2255F00DC1A7D /* MCDeviceTableViewCell.m in Sources */,
+				27A486DB1980809F0015DBF7 /* utils.swift in Sources */,
 				27A1C77F18E25C31001F33D6 /* MCDeviceDetailViewController.m in Sources */,
 				27BEE85F1724C54D00AA5417 /* MCMotionManager.m in Sources */,
+				27D5BDAD197D67F200F4132B /* DataManager.swift in Sources */,
 				2792959A18EA40B300FECF91 /* MCGyroData.m in Sources */,
 				274CDE3718DFC22B003C2C27 /* MCMotionPeripheral.m in Sources */,
 				274CDE3A18E0BF5E003C2C27 /* MCPeripheral.m in Sources */,
@@ -450,7 +473,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BEE8441724427B00AA5417 /* MotionCaptureTests.m in Sources */,
+				27EBE8BB19809AE3008CEF86 /* utils.swift in Sources */,
+				27EBE8BC1980A6FA008CEF86 /* DataManager.swift in Sources */,
+				27A486DE1980913A0015DBF7 /* utilsTest.swift in Sources */,
+				27EBE8B9198098D8008CEF86 /* DataManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +507,16 @@
 			isa = PBXTargetDependency;
 			target = 27BEE80E1724427A00AA5417 /* MotionCapture */;
 			targetProxy = 2757A136197ADF6E004BD168 /* PBXContainerItemProxy */;
+		};
+		27A486E0198094810015DBF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BEE80E1724427A00AA5417 /* MotionCapture */;
+			targetProxy = 27A486DF198094810015DBF7 /* PBXContainerItemProxy */;
+		};
+		27A486E2198094820015DBF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BEE80E1724427A00AA5417 /* MotionCapture */;
+			targetProxy = 27A486E1198094820015DBF7 /* PBXContainerItemProxy */;
 		};
 		27BEE83B1724427B00AA5417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -541,6 +577,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -554,8 +591,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = MotionCapture;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -573,14 +612,17 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_MODULE_NAME = MotionCapture;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -588,14 +630,18 @@
 		27BEE8481724427B00AA5417 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionCapture/MotionCapture-Prefix.pch";
 				INFOPLIST_FILE = "MotionCapture/MotionCapture-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture/MotionCapture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -603,14 +649,17 @@
 		27BEE8491724427B00AA5417 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionCapture/MotionCapture-Prefix.pch";
 				INFOPLIST_FILE = "MotionCapture/MotionCapture-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MotionCapture/MotionCapture-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -619,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MotionCapture.app/MotionCapture";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -628,7 +678,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionCapture/MotionCapture-Prefix.pch";
 				INFOPLIST_FILE = "MotionCaptureTests/MotionCaptureTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -637,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MotionCapture.app/MotionCapture";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -646,7 +701,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionCapture/MotionCapture-Prefix.pch";
 				INFOPLIST_FILE = "MotionCaptureTests/MotionCaptureTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;

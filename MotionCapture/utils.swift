@@ -18,16 +18,37 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+import Foundation
 
-@interface MCDataManager : NSObject
-
-@property (nonatomic, readonly, strong) NSManagedObjectModel* objectModel;
-@property (nonatomic, readonly, strong) NSManagedObjectContext* objectContext;
-@property (nonatomic, readonly, strong) NSPersistentStoreCoordinator* persistentStoreCoordinator;
-@property (nonatomic, readonly, assign) long long databaseBytes;
-
-- (id)initWithBundle:(NSString*)bundle model:(NSString*)model database:(NSString*)database;
-- (void)truncateDatabase;
-@end
+class ClearableLazy<T> {
+  
+  let initializer: () -> T
+  init(initializer: () -> T) {
+    self.initializer = initializer
+  }
+  func getOrCreate() -> T {
+    if let v = value {
+      return v
+    }
+    let newValue = initializer()
+    value = newValue
+    return newValue
+  }
+  
+  func getOrCreateOnMainThread() -> T {
+    if !value && !NSThread.isMainThread() {
+      dispatch_sync(dispatch_get_main_queue()) {
+        // create it
+        let c = self.getOrCreate()
+      }
+    }
+    return getOrCreate()
+  }
+  
+  func clear() {
+    value = nil
+  }
+  
+  private
+  var value: T?
+}

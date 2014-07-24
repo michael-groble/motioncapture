@@ -21,13 +21,13 @@
 #import <CoreAudio/CoreAudioTypes.h>
 #import "MCMotionStore.h"
 #import "MCMeasurement.h"
-#import "MCDataManager.h"
 #import "MCMotionLocalDevice.h"
+#import "MotionCapture-Swift.h"
 
 @interface MCMotionStore ()
 @property (nonatomic, assign) int count;
 @property (nonatomic, assign) NSTimeInterval timeReferenceOffset;
-@property (nonatomic, strong) MCDataManager* dataManager;
+@property (nonatomic, strong) DataManager* dataManager;
 @property (nonatomic, strong) NSEntityDescription* measurementEntity;
 @end
 
@@ -50,7 +50,7 @@
   }
   _enabled = NO;
   _count = 0;
-  _dataManager = [[MCDataManager alloc] initWithBundle:nil model:@"imu" database:@"Motion.sqlite"];
+  _dataManager = [[DataManager alloc] initWithBundleName:nil modelName:@"imu" databaseName:@"Motion.sqlite"];
   _measurementEntity = _dataManager.objectModel.entitiesByName[@"Measurement"];
 
   return self;
