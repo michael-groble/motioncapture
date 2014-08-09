@@ -67,7 +67,7 @@ class DataManager : NSObject
       var size: AnyObject?
       var error:  NSError?
       self.databaseUrl.getResourceValue(&size, forKey:NSURLFileSizeKey, error:&error)
-      return size ? (size as NSNumber).longLongValue : 0;
+      return size == nil ? 0 : (size as NSNumber).longLongValue;
     }
   }
   

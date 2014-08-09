@@ -36,7 +36,7 @@ class ClearableLazy<T> {
   }
   
   func getOrCreateOnMainThread() -> T {
-    if !value && !NSThread.isMainThread() {
+    if value == nil && !NSThread.isMainThread() {
       dispatch_sync(dispatch_get_main_queue()) {
         // create it
         let c = self.getOrCreate()
