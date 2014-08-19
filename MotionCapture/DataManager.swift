@@ -73,7 +73,7 @@ class DataManager : NSObject
   
   private lazy
   var databaseUrl: NSURL = {
-    let directories = NSFileManager.defaultManager()!.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let directories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
     let directory = directories[directories.endIndex-1] as NSURL
     return directory.URLByAppendingPathComponent(self.databaseName)
   }()
@@ -100,17 +100,19 @@ class DataManager : NSObject
     return ClearableLazy<NSManagedObjectModel>() {
       var bundle = NSBundle.mainBundle()
       if let name = self.bundleName? {
-        let bundlePath = bundle.pathForResource(name, ofType:"bundle")
-        bundle = NSBundle(path: bundlePath)
+        if let bundlePath = bundle.pathForResource(name, ofType:"bundle") {
+          bundle = NSBundle(path: bundlePath)
+        }
       }
-      let modelUrl = NSURL.fileURLWithPath(bundle.pathForResource(self.modelName, ofType:"momd"))
-        
       // TODO load specific version, e.g.
       // [bundle URLForResource:@"Blah2" withExtension:@"mom" subdirectory:@"Blah.momd"];
-        
-      var objectModel = NSManagedObjectModel(contentsOfURL: modelUrl)
-        
-      return objectModel;
+      if let modelPath = bundle.pathForResource(self.modelName, ofType:"momd") {
+        let modelUrl = NSURL.fileURLWithPath(modelPath)
+        var objectModel = NSManagedObjectModel(contentsOfURL: modelUrl)
+        return objectModel;
+      }
+      NSLog("Unable to read data model %@: ", self.modelName);
+      abort();
     }
   }()
   

@@ -28,7 +28,7 @@ class DataManagerTest: XCTestCase {
   override func setUp() {
     super.setUp()
     let databaseName = "MotionTest.sqlite"
-    let directories = NSFileManager.defaultManager()!.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let directories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
     let directory = directories[directories.endIndex-1] as NSURL
     let url = directory.URLByAppendingPathComponent(databaseName)
     NSFileManager.defaultManager().removeItemAtPath(url.path, error:nil)
